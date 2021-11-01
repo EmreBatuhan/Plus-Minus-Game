@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Plus-MinusGame</title>
+    <style>
+        body{
+            background: linear-gradient(to right , darkorchid,lightskyblue);
+        }
+        button{
+            width : 136px;
+            height : 63px;
+            font-size: 20px;
+            font-weight:bold;
+            color : white;
+            background: linear-gradient(to right,blue,blueviolet);
+            border-radius: 20px;
+            text-shadow: #333333;
+            mso-border-shadow: yes;
+            float: left;
+        }
+        #button3{
+            float:right;
+        }
+        h1{
+            text-align : center;
+            font-size: 32px;
+            color : darkred;
+            font-family: Bahnschrift;
+        }
+        p{
+            font-size: 28px;
+            color : black;
+        }
+        h2{
+            text-align : left;
+            font-size: 30px;
+            color : darkred;
+            font-family: Bahnschrift;
+        }
+    </style>
+</head>
+<body>
+    <h1>HOW TO PLAY</h1>
+    <p>Plus-minus is a two-player game. The goal is to find the opponent's number before they find yours.
+    Firstly both of the players choose a 4-digit number with distinct digits. Then one of the players starts by making a guess of the opponent's number.
+    After the guess,the opponent tells how close the guess was by using +a -b notation. For every digit that is in both guess number and secret number, we do the following:<br>
+    If the digit is at the same place for both guess number and secret number, then we add 1 to plus.<br>
+    If the digit is not at the same place for both guess number and secret number, then we add 1 to minus.<br>
+    <p>After we calculate "+a -b" -for example "+2 -1"- ,we do not tell the result of a-b. We simply say "plus two minus one".
+    After that the guess and the result are told , then other player proceeds with his turn.
+    When one player's guess matches the opponent's secret number -which means "+4 -0"- the player that made the guess wins the game.<br>
+    <p>The computer does all calculations on guess results. Computer does know your secret number but no worries ! Computer never cheats.
+    Computer does not use your secret number for its guess. You can safely give your secret number at the beginning of the game.</p>
+    <h2>Example </h2>
+    <p>Let's assume Secret Number = 1234 and guess number = 1253 <br>
+    Since 1 and 2 are included in both of the numbers and their positions are the same, they mean +2.<br>
+    3 is also included in both of the numbers but its position has changed so it means -1.
+    So the result is "+2 -1".</p>
+
+    <button type="button" id="button3" onclick="window.location.href='../PlusMinusMainPage.html'">
+        Go Back
+    </button>
+</body>
+</html>

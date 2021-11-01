@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Plus-MinusGame</title>
+    <style>
+        body{
+            background: linear-gradient(to right , darkorchid,lightskyblue);
+        }
+        button{
+            width : 136px;
+            height : 63px;
+            font-size: 20px;
+            font-weight:bold;
+            color : white;
+            background: linear-gradient(to right,blue,blueviolet);
+            border-radius: 20px;
+            text-shadow: #333333;
+            mso-border-shadow: yes;
+        }
+        input{
+            text-align: center;
+        }
+        #button1{
+            display: none;
+        }
+        #button2{
+            height: 80px;
+        }
+        #inputBox{
+            display: none;
+        }
+        #button3{
+            display: none;
+        }
+        #button4{
+            display: none;
+        }
+        div{
+            text-align: center;
+        }
+        h1{
+            text-align : center;
+            font-size: 36px;
+            color : yellow;
+            font-family: Bahnschrift;
+        }
+        .result{
+            color : red;
+        }
+        table{
+            table-layout: fixed;
+            width : 1020px;
+            height : 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 32px;
+            background:linear-gradient(to left,lightgoldenrodyellow,#ddddaa);
+        }
+        tr{
+
+        }
+        th,td{
+            text-align: center;
+            font-family: Bahnschrift;
+            font-weight: bold;
+            color: darkblue;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="header"> </h1>
+    <table cellpadding="6px" cellspacing="6px">
+        <tr>
+            <th id="pguess1">    </th>
+            <th class = "result" id="pguessr1"> </th>
+            <th id="pguess9">    </th>
+            <th class = "result" id="pguessr9">    </th>
+            <th> &nbsp&nbsp </th>
+            <th id="cguess1">    </th>
+            <th class = "result" id="cguessr1">    </th>
+            <th id="cguess9">    </th>
+            <th class = "result" id="cguessr9">   </th>
+        </tr>
+        <tr>
+            <td id="pguess2">    </td>
+            <td class = "result" id="pguessr2">    </td>
+            <td id="pguess10">    </td>
+            <td class = "result" id="pguessr10">    </td>
+            <td> &nbsp&nbsp </td>
+            <td id="cguess2">    </td>
+            <td class = "result" id="cguessr2">    </td>
+            <td id="cguess10">   </td>
+            <td class = "result" id="cguessr10">    </td>
+        </tr>
+        <tr>
+            <td id="pguess3">    </td>
+            <td class = "result" id="pguessr3">    </td>
+            <td id="pguess11">    </td>
+            <td class = "result" id="pguessr11">    </td>
+            <td>
+                <input style="font-size:48px;" type="text" id="starterInput" size="1px" maxlength="4"/>
+            </td>
+            <td id="cguess3">   </td>
+            <td class = "result" id="cguessr3">    </td>
+            <td id="cguess11">    </td>
+            <td class = "result" id="cguessr11">    </td>
+        </tr>
+        <tr>
+            <td id="pguess4">    </td>
+            <td class = "result" id="pguessr4">    </td>
+            <td id="pguess12">   </td>
+            <td class = "result" id="pguessr12">    </td>
+            <td>
+                <button type="button" id="button2" onclick="startGame()">
+                   Choose your number
+                </button>
+            </td>
+            <td id="cguess4">   </td>
+            <td class = "result" id="cguessr4">    </td>
+            <td id="cguess12">    </td>
+            <td class = "result" id="cguessr12">   </td>
+        </tr>
+        <tr>
+            <td id="pguess5">   </td>
+            <td class = "result" id="pguessr5">    </td>
+            <td id="pguess13">    </td>
+            <td class = "result" id="pguessr13">    </td>
+            <td>  </td>
+            <td id="cguess5">   </td>
+            <td class = "result" id="cguessr5">    </td>
+            <td id="cguess13">    </td>
+            <td class = "result" id="cguessr13">   </td>
+        </tr>
+        <tr>
+            <td id="pguess6">    </td>
+            <td class = "result" id="pguessr6">    </td>
+            <td id="pguess14">    </td>
+            <td class = "result" id="pguessr14">    </td>
+            <td> &nbsp&nbsp </td>
+            <td id="cguess6">    </td>
+            <td class = "result" id="cguessr6">   </td>
+            <td id="cguess14">   </td>
+            <td class = "result" id="cguessr14">    </td>
+        </tr>
+        <tr>
+            <td id="pguess7">    </td>
+            <td class = "result" id="pguessr7">    </td>
+            <td id="pguess15">    </td>
+            <td class = "result" id="pguessr15">   </td>
+            <td> &nbsp&nbsp </td>
+            <td id="cguess7">    </td>
+            <td class = "result" id="cguessr7">    </td>
+            <td id="cguess15">    </td>
+            <td class = "result" id="cguessr15">   </td>
+        </tr>
+        <tr>
+            <td id="pguess8">   </td>
+            <td class = "result" id="pguessr8">    </td>
+            <td id="pguess16">    </td>
+            <td class = "result" id="pguessr16">    </td>
+            <td> &nbsp&nbsp </td>
+            <td id="cguess8">   </td>
+            <td class = "result" id="cguessr8">   </td>
+            <td id="cguess16">   </td>
+            <td class = "result" id="cguessr16">    </td>
+        </tr>
+        <tr >
+            <td id="player"></td>
+            <td></td>
+            <td id="won"></td>
+            <td ><input style="font-size:48px;" type="text" id="inputBox" size="1" maxlength="4"/></td>
+            <td>&nbsp</td>
+            <td>
+                <button type="button" id="button1" onclick="takeInput()">
+                Make a guess
+                </button>
+            </td>
+            <td></td>
+            <td>
+                <button type="button" id="button3" onclick="window.location.href='../PlusMinusMainPage.html'">
+                    Again?
+                </button>
+            </td>
+        </tr>
+    </table>
+    <audio style="display:none" id="holy_sound" controls >
+      <source src="holy_sound.mp3" type="audio/ogg">
+      <source src="holy_sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio style="display:none" id="we_are_champions" controls >
+      <source src="We_Are_The_Champions.mp3" type="audio/ogg">
+      <source src="We_Are_The_Champions.mp3" type="audio/mpeg">
+    </audio>
+</body>
+<script src="PlusMinus.js">
+
+</script>
+</html>
